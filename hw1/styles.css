@@ -54,7 +54,6 @@ div {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* background-color: antiquewhite; */
 }
 
 footer>div {
@@ -66,25 +65,12 @@ footer>div {
     height: 100%;
     left: 0px;
     top: 0px;
-    /* background-color: rgb(189, 193, 198); */
     position: relative;
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
 }
-
-/* .leftItem .circle {
-    opacity: 0;
-}
-
-.leftItem:hover .circle {
-    opacity: 1;
-} */
 
 .rightItem {
     width: 28%;
     height: 100%;
-    /* background-color: rgba(0,0,0,.87); */
     display: flex;
     justify-content: center;
     align-content: center;
@@ -112,11 +98,6 @@ footer>div {
     justify-content: center;
     align-items: center;
     color: white;
-    /* position: absolute; */
-    /* top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1; */
 }
 
 #zero {
@@ -241,14 +222,12 @@ footer>div {
 .left {
     width: auto;
     height: 60%;
-    /* background-color: navy; */
     font-size: min(2vw, 3vh);
     color: white;
 }
 
 .middle {
     height: 60%;
-    /* background-color: aquamarine; */
     display: grid;
     grid-auto-flow: column;
     grid-column-gap: 12px;
@@ -257,7 +236,6 @@ footer>div {
 
 .right {
     height: 60%;
-    /* background-color: maroon; */
     display: grid;
     grid-auto-flow: column;
     grid-column-gap: 12px;
@@ -299,7 +277,6 @@ button {
 }
 
 #pin-slash {
-    /* width: ; */
     filter: invert(100%);
     width: min(1.7vw, 6vh);
 }
@@ -320,17 +297,9 @@ button {
 
 #mic-on {
     position: absolute;
-    /* position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); */
     opacity: 0;
 }
 
 #mic-off {
     position: absolute;
-    /* position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); */
 }

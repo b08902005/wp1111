@@ -1,0 +1,352 @@
+.google-material-icons {
+    font-family: 'Google Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+}
+
+.material-symbols-outlined {
+    color: white;
+    font-size: min(1.7vw, 6vh);
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 48
+}
+
+button .material-symbols-outlined {
+    font-size: min(2vw, 6vh);
+    text-align: center;
+}
+
+button:disabled {
+    opacity: 0.5;
+}
+
+body {
+    font-family: Roboto, sans-serif;
+    font-size: .9rem;
+    font-weight: 400;
+    height: 100%;
+    margin: 0;
+    width: 100%;
+    color: rgb(32, 33, 37);
+    display: block;
+}
+
+div {
+    display: block;
+}
+
+.full {
+    left: 0;
+    min-height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    background-color: rgb(32, 33, 37);
+}
+
+.person {
+    inset: 4% 0% 15%;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+}
+
+.full footer {
+    inset: 85% 0% 0%;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* background-color: antiquewhite; */
+}
+
+footer>div {
+    padding: 0% 2%;
+}
+
+.leftItem {
+    width: 70%;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    /* background-color: rgb(189, 193, 198); */
+    position: relative;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+}
+
+/* .leftItem .circle {
+    opacity: 0;
+}
+
+.leftItem:hover .circle {
+    opacity: 1;
+} */
+
+.rightItem {
+    width: 28%;
+    height: 100%;
+    /* background-color: rgba(0,0,0,.87); */
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+.rightItem>div {
+    margin: 2%;
+    min-width: 45%;
+    min-height: 25%;
+    background-color: rgb(60, 64, 67);
+    border: 1px solid rgb(60, 64, 67);
+    border-radius: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle {
+    height: 5vw;
+    width: 5vw;
+    border: 0px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    /* position: absolute; */
+    /* top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1; */
+}
+
+#zero {
+    background-color: rgb(65, 104, 41);
+    height: min(12vw, 48vh);
+    width: min(12vw, 48vh);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: min(5.4vw, 14.4vh);
+}
+
+#one .circle {
+    background-color: rgb(62, 68, 123);
+}
+
+#two .circle {
+    background-color: rgb(187, 188, 185);
+}
+
+#three .circle {
+    background-color: rgb(67, 141, 155);
+}
+
+#four .circle {
+    background-color: rgb(172, 153, 140);
+}
+
+#five .circle {
+    background-color: rgb(178, 47, 91);
+}
+
+@media (max-width: 730px) {
+    .rightItem>div {
+        margin: 1px;
+    }
+}
+
+@media (max-width: 296px) {
+    .rightItem>div {
+        margin: 0px;
+    }
+}
+
+.rightItem div {
+    position: relative;
+}
+
+.rightItem .name {
+    color: white;
+    font-size: min(1.4vw, 2.1vh);
+    position: absolute;
+    bottom: 4%;
+    left: 6%;
+}
+
+.leftItem .name {
+    color: white;
+    font-size: min(2vw, 3vh);
+    position: absolute;
+    bottom: 1%;
+    left: 3%;
+}
+
+.name span {
+    display: inline;
+    padding-right: 8%;
+}
+
+.leftItem .muted {
+    position: absolute;
+    top: 3%;
+    right: 3%;
+}
+
+.rightItem .muted {
+    position: absolute;
+    top: 3%;
+    right: 3%;
+}
+
+.leftItem .btn-group {
+    position: fixed;
+    width: 85%;
+    height: 30%;
+    background-color: black;
+    opacity: 0;
+    border-radius: 2vw;
+    transition: 0.7s;
+    display: flex;
+    justify-content: space-around;
+}
+
+.rightItem .btn-group {
+    position: fixed;
+    background-color: rgb(60, 64, 67);
+    opacity: 0;
+    border-radius: 2vw;
+    transition: 0.7s;
+    display: flex;
+    justify-content: space-around;
+}
+
+.btn-group button {
+    background-color: transparent;
+}
+
+.leftItem:hover .btn-group:not(:hover) {
+    opacity: 0.3;
+}
+
+.leftItem .btn-group:hover {
+    opacity: 0.7;
+}
+
+.rightItem .btn-group:hover {
+    background-color: rgb(60, 64, 67);
+    opacity: 0.8;
+}
+
+.left {
+    width: auto;
+    height: 60%;
+    /* background-color: navy; */
+    font-size: min(2vw, 3vh);
+    color: white;
+}
+
+.middle {
+    height: 60%;
+    /* background-color: aquamarine; */
+    display: grid;
+    grid-auto-flow: column;
+    grid-column-gap: 12px;
+    padding: 0 6px;
+}
+
+.right {
+    height: 60%;
+    /* background-color: maroon; */
+    display: grid;
+    grid-auto-flow: column;
+    grid-column-gap: 12px;
+    padding: 0 6px;
+}
+
+button {
+    height: min(3.5vw, 9vh);
+    width: min(3.5vw, 9vh);
+    max-height: 100%;
+    border: 0px;
+    border-radius: 50%;
+    padding: 0%;
+    background-color: rgb(99,103,105);
+}
+
+#call-end {
+    width: min(5vw, 12vh);
+    border-radius: min(2vw, 4vh);
+}
+
+#call-end span {
+    color: white;
+    font-size: min(2.7vw, 8vh);
+}
+
+.right button {
+    background: transparent;
+}
+
+#control img {
+    filter: invert(100%);
+    width: min(2vw, 6vh);
+}
+
+#theme img {
+    filter: brightness(600%);
+    width: min(2vw, 6vh);
+}
+
+#pin-slash {
+    /* width: ; */
+    filter: invert(100%);
+    width: min(1.7vw, 6vh);
+}
+
+#pin-slash {
+    color: white;
+}
+
+#mic, #cam, #call-end {
+    background-color: rgb(233,84,71);
+}
+
+#mic {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#mic-on {
+    position: absolute;
+    /* position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+    opacity: 0;
+}
+
+#mic-off {
+    position: absolute;
+    /* position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+}

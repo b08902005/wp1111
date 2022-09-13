@@ -249,7 +249,17 @@ button {
     border: 0px;
     border-radius: 50%;
     padding: 0%;
-    background-color: rgb(99,103,105);
+    background-color: rgb(99, 103, 105);
+}
+
+.mic_checkbox {
+    height: min(3.5vw, 9vh);
+    width: min(3.5vw, 9vh);
+    max-height: 100%;
+    border: 0px;
+    border-radius: 50%;
+    padding: 0%;
+    background-color: rgb(233, 84, 71);
 }
 
 #call-end {
@@ -285,21 +295,58 @@ button {
     color: white;
 }
 
-#mic, #cam, #call-end {
-    background-color: rgb(233,84,71);
+#mic,
+#cam,
+#call-end {
+    background-color: rgb(233, 84, 71);
 }
 
-#mic {
+.mic_checkbox {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+}
+
+.mic_checkbox input[type="checkbox"] {
+    display: none;
+}
+
+label {
+    height: min(3.5vw, 9vh);
+    width: min(3.5vw, 9vh);
+    max-height: 100%;
+    border: 0px;
+    border-radius: 50%;
+    padding: 0%;
+    background: none;
+    text-align: center;
 }
 
 #mic-on {
     position: absolute;
-    opacity: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
 }
 
 #mic-off {
     position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+}
+
+.mic_checkbox:has(input[type="checkbox"]:checked) {
+    background-color: rgb(99, 103, 105)
+}
+
+.mic_checkbox:has(input[type="checkbox"]:checked) #mic-on {
+    display: block;
+}
+
+.mic_checkbox:has(input[type="checkbox"]:checked) #mic-off {
+    display: none;
 }

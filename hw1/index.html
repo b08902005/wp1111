@@ -175,16 +175,18 @@
                 <p>凌晨12:43&emsp;|&emsp;Web Programming</p>
             </div>
             <div class="middle">
-                <div>
-                    <button onclick="myFunc()" type="button" id="mic" data-bs-toggle="tooltip" data-bs-placement="top"
+                <div class="mic_checkbox">
+                    <input type="checkbox" id="0" />
+                    <label for="0">
+                        <span class="material-symbols-outlined" id="mic-off" data-bs-toggle="tooltip" data-bs-placement="top"
                         title="開啟麥克風 (Ctrl + D)">
-                        <span class="material-symbols-outlined" id="mic-off">
                             mic_off
                         </span>
-                        <span class="material-symbols-outlined" id="mic-on">
+                        <span class="material-symbols-outlined" id="mic-on" data-bs-toggle="tooltip" data-bs-placement="top"
+                        title="關閉麥克風 (Ctrl + E)">
                             mic
                         </span>
-                    </button>
+                    </label>
                 </div>
                 <div>
                     <button type="button" id="cam" data-bs-toggle="tooltip" data-bs-placement="top"
@@ -265,25 +267,6 @@
             </div>
         </footer>
     </div>
-    <script>
-        var bool = true;
-        function myFunc() {
-            bool = !bool;
-            if (bool) {
-                document.getElementById('mic').setAttribute("style", "background-color: rgb(233,84,71);");
-                document.getElementById('mic-off').setAttribute("style", "opacity: 1;");
-                document.getElementById('mic-on').setAttribute("style", "opacity: 0;");
-                document.getElementById('mic').setAttribute("title", "開啟麥克風 (Ctrl + D)");
-            }
-            else {
-                document.getElementById('mic').setAttribute("style", "background-color: rgb(99,103,105);");
-                document.getElementById('mic-off').setAttribute("style", "opacity: 0;");
-                document.getElementById('mic-on').setAttribute("style", "opacity: 1;");
-                document.getElementById('mic').setAttribute("title", "關閉麥克風 (Ctrl + D)");
-            }
-        }
-    </script>
-
 </body>
 
 </html>

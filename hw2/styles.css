@@ -225,6 +225,11 @@ footer>div {
     opacity: 0.7;
 }
 
+.rightItem .window:hover .btn-group:not(:hover){
+    background-color: rgb(60, 64, 67);
+    opacity: 0.3;
+}
+
 .rightItem .btn-group:hover {
     background-color: rgb(60, 64, 67);
     opacity: 0.8;

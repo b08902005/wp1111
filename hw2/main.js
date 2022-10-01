@@ -311,6 +311,7 @@ document.querySelector('.middle').append(plusBtn);
 // document.body.append(plusBtn);
 plusBtn.addEventListener('click', () => {
     let name = prompt("Enter new person's name:");
+    if (name === null || name === "")    return;
     console.log(name);
 
     const newRightWin = document.createElement('div');

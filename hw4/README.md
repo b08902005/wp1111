@@ -1,19 +1,5 @@
-# HW4 MineSweeper
-![](https://i.imgur.com/pfsPBRR.png)
-## [Demo Video](https://www.youtube.com/watch?v=mDx4bi-rA-Q)
+# Web Programming HW#4
 
-
-## Structure
-![](https://i.imgur.com/noioyH8.png)
-
-## File Structure
-![](https://i.imgur.com/LQWxcXW.png)
-
-## Our Rules of MineSweeper
-![](https://i.imgur.com/1Di60VR.png)
-
-## Structure of HTML
-![](https://i.imgur.com/18fudrr.png)
-![](https://i.imgur.com/nLgxGL2.png)
-![](https://i.imgur.com/5TwVv4A.png)
-![](https://i.imgur.com/BvhORok.png)
+基本功能全部完成，除了 pdf 檔中提到的之外，在按到地雷而 game over 時，其他所有有地雷且未插上旗子的地方也會被 revealed。
+進階功能也全部完成，我實作的 reveal function，會在點開 value 為零的格子時，檢查以它為中心的九宮格中其他八格的 value，如果為 0 則揭開並遞迴檢查 (改以此格為中心作和前面一樣的事)，直到沒有任何 value 為 0 且在九宮格內的格子為止。
+考慮到頁面大小，我自己設置了地雷和格子的最大最小數 (因為作業要求裡沒寫)。

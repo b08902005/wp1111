@@ -27,10 +27,21 @@ const Board = ({ boardSize, mineNum, backToHome }) => {
         // Calling the function
         freshBoard();
     }, []);
-    // useEffect(() => {
-    //     console.log('gameover');
-    //     restartGame();
-    // }, [gameOver]);
+    useEffect(() => {
+        console.log("gameover!");
+        if (gameOver) {
+            let newBoard = JSON.parse(JSON.stringify(board));
+            for (let i = 0; i < mineLocations.length; i++) {
+                if (!newBoard[mineLocations[i][0]][mineLocations[i][1]].revealed &&
+                    !newBoard[mineLocations[i][0]][mineLocations[i][1]].flagged) {
+                    console.log(mineLocations[i]);
+                    newBoard[mineLocations[i][0]][mineLocations[i][1]].revealed = true;
+                    // revealBomb(mineLocations[i][0], mineLocations[i][1]);
+                }
+            }
+            setBoard(newBoard);
+        }
+    }, [gameOver]);
 
     // Creating a board
     const freshBoard = () => {
@@ -85,7 +96,7 @@ const Board = ({ boardSize, mineNum, backToHome }) => {
         if (newBoard[x][y].value === '💣') {
             setGameOver(true);
         }
-        else if(newNonMinesCount === 0) {
+        else if (newNonMinesCount === 0) {
             setWin(true);
         }
         setBoard(newBoard);

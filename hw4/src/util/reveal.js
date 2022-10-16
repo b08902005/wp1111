@@ -7,6 +7,8 @@
 ****************************************************************************/
 
 function revealAround(board, x, y, newNonMinesCount) {
+  if (board[x][y].revealed || board[x][y].flagged)
+    return { board, newNonMinesCount };
   board[x][y].revealed = true;
   newNonMinesCount--;
   if (x > 0) {
@@ -14,8 +16,8 @@ function revealAround(board, x, y, newNonMinesCount) {
       if (!board[x - 1][y - 1].revealed && board[x - 1][y - 1].value === 0) {
         ({ board, newNonMinesCount } = revealAround(board, x - 1, y - 1, newNonMinesCount));
       }
-      else if (!board[x - 1][y - 1].revealed){
-        board[x-1][y-1].revealed = true;
+      else if (!board[x - 1][y - 1].revealed) {
+        board[x - 1][y - 1].revealed = true;
         newNonMinesCount--;
       }
     }
@@ -23,8 +25,8 @@ function revealAround(board, x, y, newNonMinesCount) {
       if (!board[x - 1][y].revealed && board[x - 1][y].value === 0) {
         ({ board, newNonMinesCount } = revealAround(board, x - 1, y, newNonMinesCount));
       }
-      else if (!board[x - 1][y].revealed){
-        board[x-1][y].revealed = true;
+      else if (!board[x - 1][y].revealed) {
+        board[x - 1][y].revealed = true;
         newNonMinesCount--;
       }
     }
@@ -32,8 +34,8 @@ function revealAround(board, x, y, newNonMinesCount) {
       if (!board[x - 1][y + 1].revealed && board[x - 1][y + 1].value === 0) {
         ({ board, newNonMinesCount } = revealAround(board, x - 1, y + 1, newNonMinesCount));
       }
-      else if (!board[x - 1][y + 1].revealed){
-        board[x-1][y+1].revealed = true;
+      else if (!board[x - 1][y + 1].revealed) {
+        board[x - 1][y + 1].revealed = true;
         newNonMinesCount--;
       }
     }
@@ -42,8 +44,8 @@ function revealAround(board, x, y, newNonMinesCount) {
     if (!board[x][y - 1].revealed && board[x][y - 1].value === 0) {
       ({ board, newNonMinesCount } = revealAround(board, x, y - 1, newNonMinesCount));
     }
-    else if (!board[x][y - 1].revealed){
-      board[x][y-1].revealed = true;
+    else if (!board[x][y - 1].revealed) {
+      board[x][y - 1].revealed = true;
       newNonMinesCount--;
     }
   }
@@ -51,8 +53,8 @@ function revealAround(board, x, y, newNonMinesCount) {
     if (!board[x][y + 1].revealed && board[x][y + 1].value === 0) {
       ({ board, newNonMinesCount } = revealAround(board, x, y + 1, newNonMinesCount));
     }
-    else if (!board[x][y + 1].revealed){
-      board[x][y+1].revealed = true;
+    else if (!board[x][y + 1].revealed) {
+      board[x][y + 1].revealed = true;
       newNonMinesCount--;
     }
   }
@@ -61,8 +63,8 @@ function revealAround(board, x, y, newNonMinesCount) {
       if (!board[x + 1][y - 1].revealed && board[x + 1][y - 1].value === 0) {
         ({ board, newNonMinesCount } = revealAround(board, x + 1, y - 1, newNonMinesCount));
       }
-      else if (!board[x + 1][y - 1].revealed){
-        board[x+1][y-1].revealed = true;
+      else if (!board[x + 1][y - 1].revealed) {
+        board[x + 1][y - 1].revealed = true;
         newNonMinesCount--;
       }
     }
@@ -70,8 +72,8 @@ function revealAround(board, x, y, newNonMinesCount) {
       if (!board[x + 1][y].revealed && board[x + 1][y].value === 0) {
         ({ board, newNonMinesCount } = revealAround(board, x + 1, y, newNonMinesCount));
       }
-      else if (!board[x + 1][y].revealed){
-        board[x+1][y].revealed = true;
+      else if (!board[x + 1][y].revealed) {
+        board[x + 1][y].revealed = true;
         newNonMinesCount--;
       }
     }
@@ -79,8 +81,8 @@ function revealAround(board, x, y, newNonMinesCount) {
       if (!board[x + 1][y + 1].revealed && board[x + 1][y + 1].value === 0) {
         ({ board, newNonMinesCount } = revealAround(board, x + 1, y + 1, newNonMinesCount));
       }
-      else if (!board[x + 1][y + 1].revealed){
-        board[x+1][y+1].revealed = true;
+      else if (!board[x + 1][y + 1].revealed) {
+        board[x + 1][y + 1].revealed = true;
         newNonMinesCount--;
       }
     }

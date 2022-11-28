@@ -128,7 +128,7 @@ const ChatRoom = () => {
                         : chatBoxes[index + 1].key
                     : activeKey
                 : '');
-        startChat(me, newKey);
+        startChat(me, newKey, 'REMOVE');
         return newKey;
     };
 
@@ -142,7 +142,7 @@ const ChatRoom = () => {
                     type="editable-card"
                     activeKey={activeKey}
                     onChange={(key) => {    // 點選其他已開啟的tab(切換)
-                        startChat(me, key);
+                        startChat(me, key, 'CHANGE');
                         setActiveKey(updateChatBox(key));
                     }}
                     onEdit={(targetKey, action) => {    // 點加號或叉叉時
@@ -158,7 +158,7 @@ const ChatRoom = () => {
                 <ChatModal
                     open={modalOpen}
                     onCreate={({ name }) => {
-                        startChat(me, name);
+                        startChat(me, name, 'START');
                         setActiveKey(createChatBox(name));
                         setModalOpen(false);
                     }}
@@ -173,16 +173,24 @@ const ChatRoom = () => {
                 enterButton="Send"
                 placeholder="Type a message here..."
                 onSearch={(msg) => {
-                    if (!msg) {
+                    if (activeKey) {
+                        if (!msg) {
+                            displayStatus({
+                                type: 'error',
+                                msg: 'Please enter message.'
+                            })
+                            return
+                        }
+                        sendMessage(me, activeKey, msg)
+                        setMsg('')
+                        setMsgSent(true);
+                    }
+                    else {
                         displayStatus({
                             type: 'error',
-                            msg: 'Please enter message.'
+                            msg: 'Please create chatbox(es).'
                         })
-                        return
                     }
-                    sendMessage(me, activeKey, msg)
-                    setMsg('')
-                    setMsgSent(true);
                 }}
             ></Input.Search>
             {/* <button onClick={() => {

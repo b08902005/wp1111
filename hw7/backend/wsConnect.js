@@ -34,15 +34,34 @@ export default {
             const [task, payload] = JSON.parse(data)
             switch (task) {
                 case 'CHAT': {
-                    const { name, to } = payload;
+                    const { name, to, type } = payload;
                     const boxName = makeName(name, to);
                     const { messages } = await validateChatBox(boxName, [name, to]);
                     // console.log(messages);
                     sendData(['CHAT', messages], ws);
-                    sendStatus({
-                        type: 'success',
-                        msg: 'chat start'
-                    }, ws)
+                    switch (type) {
+                        case 'START': {
+                            sendStatus({
+                                type: 'success',
+                                msg: 'Create chatbox'
+                            }, ws)
+                            break;
+                        }
+                        case 'CHANGE': {
+                            sendStatus({
+                                type: 'success',
+                                msg: 'Change chatbox'
+                            }, ws)
+                            break;
+                        }
+                        case 'REMOVE': {
+                            sendStatus({
+                                type: 'success',
+                                msg: 'Remove chatbox'
+                            }, ws)
+                            break;
+                        }
+                    }
                     ws.box = boxName;
                     break;
                 }

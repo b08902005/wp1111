@@ -59,12 +59,18 @@ const ChatProvider = (props) => {
     };
 
     // ["input", payload]
-    const startChat = async (name, to) => {
-        console.log('start chat');
+    const startChat = async (name, to, type) => {
+        if (!to && type === 'REMOVE') {
+            setStatus({
+                type: 'success',
+                msg: 'Remove chatbox'
+            })
+            return
+        }
         if (!name || !to)
             throw new Error('Name or to required!');
         sendData(['CHAT', {
-            name, to
+            name, to, type
         }])
         // console.log(messages);
     }

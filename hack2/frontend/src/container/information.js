@@ -15,7 +15,10 @@ const Information = ({ info, rating }) => {
     const getTag = (tags) => {
         return (
             <>
-                {/* TODO Part III-2-a render tags */}
+                {/* TODO Part III-2-a render tags */
+                    tags.map((tag) => (
+                        <div className='tag' key={tag}>{tag}</div>
+                    ))}
             </>
         )
     }
@@ -25,16 +28,48 @@ const Information = ({ info, rating }) => {
             priceText += "$"
         return (
             <>
-                {/* TODO Part III-2-a render price tags; hint: convert price number to dollar signs first */}
+                {/* TODO Part III-2-a render price tags; hint: convert price number to dollar signs first */
+                    <div className='tag' key={priceText}>{priceText}</div>}
             </>
         )
     }
 
     const getBusiness = (time) => {
-        
+        // console.log(time)
         return (
             <div className='businessTime'>
-                {/* TODO Part III-2-c: render business time for each day*/}
+                {/* TODO Part III-2-c: render business time for each day*/
+                    (<>
+                        <div className='singleDay'>
+                            <div className='day'>Mon</div>
+                            <div className='time'>{('All' in time)? time['All']: ('Mon' in time)? time['Mon']: 'Closed'}</div>
+                        </div>
+                        <div className='singleDay'>
+                            <div className='day'>Tue</div>
+                            <div className='time'>{('All' in time)? time['All']: ('Tue' in time)? time['Tue']: 'Closed'}</div>
+                        </div>
+                        <div className='singleDay'>
+                            <div className='day'>Wed</div>
+                            <div className='time'>{('All' in time)? time['All']: ('Wed' in time)? time['Wed']: 'Closed'}</div>
+                        </div>
+                        <div className='singleDay'>
+                            <div className='day'>Thr</div>
+                            <div className='time'>{('All' in time)? time['All']: ('Thr' in time)? time['Thr']: 'Closed'}</div>
+                        </div>
+                        <div className='singleDay'>
+                            <div className='day'>Fri</div>
+                            <div className='time'>{('All' in time)? time['All']: ('Fri' in time)? time['Fri']: 'Closed'}</div>
+                        </div>
+                        <div className='singleDay'>
+                            <div className='day'>Sat</div>
+                            <div className='time'>{('All' in time)? time['All']: ('Sat' in time)? time['Sat']: 'Closed'}</div>
+                        </div>
+                        <div className='singleDay'>
+                            <div className='day'>Sun</div>
+                            <div className='time'>{('All' in time)? time['All']: ('Sun' in time)? time['Sun']: 'Closed'}</div>
+                        </div>
+                    </>)
+                }
             </div>
         )
     }

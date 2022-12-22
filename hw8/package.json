@@ -1,0 +1,12 @@
+{
+  "name": "hw8",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/ric2k1/modern-graphql-tutorial.git",
+  "author": "b08902005 <b08902005@ntu.edu.tw>",
+  "license": "MIT",
+  "scripts": {
+    "start": "cd frontend && yarn start",
+    "server": "cd backend && yarn start"
+  }
+}

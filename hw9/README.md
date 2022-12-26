@@ -13,7 +13,7 @@
 4. Query Input 下⽅為 message console。印出訊息/資料會印在之前的訊息之下，⽽當 “Clear” 動作被執⾏之後，清除 console 中的所有訊息並印出 "Database cleared"。如果在 query 時有任何的錯誤訊息，也是⼀樣印在這邊。
 
 ### 預定開啟的⽇期與時段
-12/27 00:00 ~ 1/2 21:00
+12/30 00:00 ~ 1/5 21:00
 
 ### Deployment 的流程
 1. 我選擇將作業六 deploy 到 Railway 上。
